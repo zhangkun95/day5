@@ -1,0 +1,17 @@
+.table{
+    vertical-align: middle;
+    text-align: center;
+    width: 600px;
+}
+#tr{
+    height: 100px;
+    th{
+        vertical-align: middle;
+        text-align: center;
+    }
+    td{
+        vertical-align: middle;
+        text-align: center; 
+        line-height: 100px; 
+    }
+}

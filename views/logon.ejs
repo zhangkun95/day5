@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>xx后台管理系统</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/commone.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/logon.css">
+</head>
+
+<body>
+    <div class="container">
+        <%- include('./commone/head.ejs') %>
+            <div class="lv_main">
+                <%- include('./commone/menu.ejs') %>
+                    <div class="body logonb">
+                        <form action="/" method="GET" class="form">
+                            <div>小猩猩后台管理系统</div>
+                            <div>登录</div>
+                            <div>
+                                <span>用户名:</span>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <span>密&emsp;码:</span>
+                                <input type="password" value="">
+                            </div>
+                            <div>
+                                <input type="submit" value="登录" class="button btn btn-primary">
+                                <a href="/register.html">没有账号？</a>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+            <%- include('./commone/foot') %>
+    </div>
+</body>
+
+</html>

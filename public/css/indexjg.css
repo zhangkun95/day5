@@ -1,0 +1,22 @@
+.indexjg {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between; }
+  .indexjg h3 {
+    font-size: 20px;
+    padding-top: 20px;
+    width: 80%;
+    text-align: center;
+    margin: auto; }
+  .indexjg div {
+    height: 80%;
+    width: 80%;
+    background-color: red;
+    margin: auto; }
+    .indexjg div img {
+      width: 100%;
+      height: 100%; }
+
+/*# sourceMappingURL=indexjg.css.map */

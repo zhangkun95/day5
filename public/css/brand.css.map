@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAM;EACF,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,KAAK;;AAEhB,GAAG;EACC,MAAM,EAAE,KAAK;EACb,MAAE;IACE,cAAc,EAAE,MAAM;IACtB,UAAU,EAAE,MAAM;EAEtB,MAAE;IACE,cAAc,EAAE,MAAM;IACtB,UAAU,EAAE,MAAM;IAClB,WAAW,EAAE,KAAK",
+"sources": ["../../scss/brand.scss"],
+"names": [],
+"file": "brand.css"
+}

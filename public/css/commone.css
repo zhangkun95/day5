@@ -1,0 +1,78 @@
+/* 整个项目都能用上的样式 */
+html,body{
+    height: 100%;
+}
+body{
+    background-color: bisque;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.lv_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #000;
+}
+.lv_head .logo{
+    font-size: 26px;
+    text-decoration: none;
+}
+.lv_head .right{
+    display: flex;
+    align-items: center;
+}
+.lv_menu{
+    width: 260px;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid rgb(255, 212, 192);
+}
+.lv_menu li{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.lv_foot{
+    height: 50px;
+    border-top: 1px solid #000;
+}
+.lv_main{
+    flex: 1;
+    display: flex;
+}
+.body{
+    flex: 1;
+    padding: 0 20px;
+}
+.pagination{
+    float: right;
+}
+.sc_l{
+    padding: 10px 0 10px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.table-striped>tbody>tr:nth-of-type(odd){
+    background-color: #989569;
+}
+.table-hover>tbody>tr:hover{
+    background-color: #ad5e5e;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+    border:1px solid #672a80; 
+}
+.table-bordered{
+    border:1px solid #672a80;
+}

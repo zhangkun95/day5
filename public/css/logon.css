@@ -1,0 +1,31 @@
+.logonb {
+  display: flex;
+  vertical-align: middle; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1;
+  vertical-align: middle;
+  margin: auto; }
+  .form div {
+    flex: 1;
+    text-align: center;
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 700;
+    margin: 10px 0; }
+    .form div span {
+      font-size: 20px; }
+    .form div a {
+      font-size: 20px; }
+    .form div input {
+      font-size: 20px;
+      outline: none; }
+
+.btn-primary {
+  border-radius: 10px;
+  outline: none; }
+
+/*# sourceMappingURL=logon.css.map */

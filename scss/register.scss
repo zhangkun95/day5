@@ -1,0 +1,45 @@
+.registerb{
+    height: 100%;
+    div{
+        font-size: 20px;
+        padding: 0;
+        margin: 8px 0;
+        position: relative;
+        span{
+            width: 100px;
+            display: inline-block;
+            text-align: right;
+        }
+        input{
+            margin-right: 100px;
+            width: 240px;
+            height: 35px;
+            line-height: 35px;
+            padding: 0;
+        }
+        label{
+           width: 120px;
+           margin-right: 50px;
+           input{
+               margin: 0;
+               width: 15px;
+               height: 15px;
+           }
+        }
+        a{
+            font-size: 12px;
+            margin-left: -100px;
+        }
+        p{
+            position: absolute;
+            display: inline;
+            font-size: 12px;
+            background-color: #ffffff;
+            border-radius: 50px;
+            padding: 0 5px;
+            left: 550px;
+            top: 0;
+            display: none;
+        }
+    }
+}

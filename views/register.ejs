@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xx后台管理系统</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/commone.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/logon.css">
+  <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+  <div class="container">
+    <%- include('./commone/head.ejs') %>
+      <div class="lv_main">
+        <%- include('./commone/menu.ejs') %>
+          <div class="body registerb">
+            <form action="/logon.html" class="form">
+              <div>注册</div>
+              <div>
+                <span>用户名:</span>
+                <input type="text" class="unane">
+                <p class="unane1">请输入一个6-20字符的用户名</p>
+                <p class="unane2">请输入6-20个字符</p>
+                <p class="unane3" style="color: rgb(25, 216, 66)">ok</p>
+                <p class="unane4" style="color: rgb(250, 7, 7)">请重新输入用户名</p>
+              </div>
+              <div>
+                <span>密&emsp;码:</span>
+                <input type="password" value="" class="pwp">
+                <p class="pwp1">请输入一个6-20字符的密码</p>
+                <p class="pwp2" style="color: rgb(250, 7, 7)">密码不符合要求，请重新输入</p>
+                <p class="pwp3" style="color: rgb(25, 216, 66)">ok</p>
+              </div>
+              <div>
+                <span>确认密码:</span>
+                <input type="password" value="" class="pwpc">
+                <p class="pwpc1" style="color: rgb(25, 216, 66)">OK</p>
+                <p class="pwpc2" style="color: rgb(250, 7, 7)">NO</p>
+              </div>
+              <div>
+                <span>昵称:</span>
+                <input type="text" value="" class="unanen">
+                <p class="unanen1" style="color: rgb(25, 216, 66)">OK</p>
+                <p class="unanen2" style="color: rgb(250, 7, 7)">NO</p>
+                <p class="unanen3">请输入一个昵称，不可超过10个字符</p>
+              </div>
+              <div>
+                <span>手机号码:</span>
+                <input type="text" value="" class="phone">
+                <p class="phone1" style="color: rgb(25, 216, 66)">OK</p>
+                <p class="phone2" style="color: rgb(250, 7, 7)">NO</p>
+                <p class="phone3">请输入正确的手机号码</p>
+              </div>
+              <div>
+                <span>管理员:</span>
+                <label>
+                  <input type="radio" name="dx">yes</label>
+                <label>
+                  <input type="radio" name="dx">no</label>
+              </div>
+              <div>
+                <input type="submit" value="注册" class="button btn btn-primary">
+                <a href="/logon.html">直接登录</a>
+              </div>
+            </form>
+          </div>
+      </div>
+      <%- include('./commone/foot') %>
+  </div>
+</body>
+
+</html>
+<script src="/js/jquery.min.js"></script>
+<script>
+  var sl = /^.{6,20}$/;
+  var ff = /^\w{6,20}$/;
+  var nc = /^.{1,10}$/;
+  var ph = /^1\d{10}$/;
+  $(".unane").focus(function () {
+    $(".unane1").show();
+    $(".unane4").hide();
+    $(".unane").keyup(function () {
+      var unanev = $(".unane").val();
+      $(".unane1").hide();
+      $(".unane2").hide();
+      $(".unane3").hide();
+      $(".unane4").hide();
+
+      if (!sl.test(unanev)) {
+        $(".unane2").show();
+      } else {
+        $(".unane2").hide();
+        if (ff.test(unanev)) {
+          $(".unane3").show();
+          $(".unane4").hide();
+        } else {
+          $(".unane3").hide();
+          $(".unane4").show();
+        }
+      }
+    })
+  })
+  $(".unane").blur(function () {
+    $(".unane1").hide();
+    $(".unane2").hide();
+  })
+
+  $(".pwp").focus(function () {
+    $(".pwp1").show();
+    $(".pwp").keyup(function () {
+      $(".pwp3").hide();
+      var pwpv = $(".pwp").val();
+
+      if (!sl.test(pwpv)) {
+        $(".pwp1").show();
+      } else {
+        if (ff.test(pwpv)) {
+          $(".pwp2").hide();
+          $(".pwp1").hide();
+          $(".pwp3").show();
+        } else {
+          $(".pwp2").show();
+          $(".pwp1").hide();
+          $(".pwp3").hide();
+        }
+      }
+    })
+  })
+  $(".pwp").blur(function () {
+    $(".pwp1").hide();
+    $(".pwp2").hide();
+  })
+
+$(".pwpc").focus(function () {
+  $(".pwpc").keyup(function(){
+    if($(".pwpc").val()==$(".pwp").val() && $(".pwpc").val() != ""){
+      $(".pwpc1").show();
+      $(".pwpc2").hide();
+    }else{
+      $(".pwpc2").show();
+      $(".pwpc1").hide();
+    }
+  })
+   
+  })
+
+$(".unanen").focus(function(){
+  $(".unanen3").show();
+  $(".unanen").keyup(function(){
+    var unanenv = $(".unanen").val();
+    if(unanenv ==""){
+      $(".unanen3").show();
+    }else{
+      $(".unanen3").hide();
+    }
+    if(nc.test(unanenv)){
+      $(".unanen1").show();
+      $(".unanen2").hide();
+    }else{
+      $(".unanen1").hide();
+      $(".unanen2").show();
+    }
+  })
+})
+$(".unanen").blur(function(){
+  $(".unanen2").hide();
+  $(".unanen3").hide();
+})
+
+$(".phone").focus(function(){
+  $(".phone3").show();
+  $(".phone").keyup(function(){
+    var phonev = $(".phone").val();
+    if(phonev ==""){
+      $(".phone3").show();
+    }else{
+      $(".phone3").hide();
+    }
+    if(ph.test(phonev)){
+      $(".phone1").show();
+      $(".phone2").hide();
+    }else{
+      $(".phone1").hide();
+      $(".phone2").show();
+    }
+  })
+})
+$(".phone").blur(function(){
+  $(".phone2").hide();
+  $(".phone3").hide();
+})
+</script>

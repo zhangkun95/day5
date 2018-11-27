@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xx后台管理系统</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/commone.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/phone.css">
+</head>
+
+<body>
+  <div class="container">
+    <%- include('./commone/head.ejs') %>
+      <div class="lv_main">
+        <%- include('./commone/menu.ejs') %>
+          <div class="body">
+            <div class="">
+              <button class="phone btn btn-primary">新增手机</button>
+              <table class="table table-hover table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>图片</th>
+                    <th>手机名称</th>
+                    <th>所属品牌</th>
+                    <th>官方指导价</th>
+                    <th>二手回收价</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="tr">
+                    <th scope="row">1</th>
+                    <td>
+                      <img src="/images/sj.jpg" alt="">
+                    </td>
+                    <td class="name">华为 HUAWEI Mate 20 </td>
+                    <td class="brand">华为</td>
+                    <td class="brandyj">￥8699</td>
+                    <td class="brandej">￥7699</td>
+                    <td>
+                      <a href="">修改</a>
+                      <a href="" style="color: rgb(107, 33, 33)">删除</a>
+                    </td>
+                  </tr>
+                  <tr id="tr">
+                    <th scope="row">1</th>
+                    <td>
+                      <img src="/images/sj.jpg" alt="">
+                    </td>
+                    <td class="name">华为 HUAWEI Mate 20 </td>
+                    <td class="brand">华为</td>
+                    <td class="brandyj">￥8699</td>
+                    <td class="brandej">￥7699</td>
+                    <td>
+                      <a href="">修改</a>
+                      <a href="" style="color: rgb(107, 33, 33)">删除</a>
+                    </td>
+                  </tr>
+                  <tr id="tr">
+                    <th scope="row">1</th>
+                    <td>
+                      <img src="/images/sj.jpg" alt="">
+                    </td>
+                    <td class="name">华为 HUAWEI Mate 20 </td>
+                    <td class="brand">华为</td>
+                    <td class="brandyj">￥8699</td>
+                    <td class="brandej">￥7699</td>
+                    <td>
+                      <a href="">修改</a>
+                      <a href="" style="color: rgb(107, 33, 33)">删除</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="add" style="display: none">
+              <h2>新增手机</h2>
+              <form action="">
+                <div>
+                  <span>名称:</span>
+                  <input type="text">
+                </div>
+                <div>
+                  <span>品牌:</span>
+                  <select name="">
+                    <option value="0">请选择</option>
+                    <option value="1">华为</option>
+                  </select>
+                </div>
+                <div>
+                  <span>官方指导价:</span>
+                  <input type="text">
+                </div>
+                <div>
+                  <span>二手回收价:</span>
+                  <input type="text">
+                </div>
+                <div>
+                  <span>图片:</span>
+                  <input id="file" type="file">
+                </div>
+                <div>
+                  <input style="width: 25%;margin-right: 50px;background: rgb(21, 191, 221);color: #ffffff;padding: 10px 0;border-radius: 10px;outline: transparent;" type="submit" value="确认">
+                  <input class="cancel" style="width: 25%;padding: 10px 0;border-radius: 10px;outline: transparent;" type="button" value="取消">
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+      <%- include('./commone/foot') %>
+  </div>
+</body>
+
+</html>
+<script src="/js/jquery.min.js"></script>
+<script>
+  $(".phone").click(function(){
+    $(".add").show();
+  })
+  $(".cancel").click(function(){
+    $(".add").hide();
+  })
+
+
+</script>

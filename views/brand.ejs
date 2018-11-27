@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xx后台管理系统</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/commone.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/brand.css">
+</head>
+
+<body>
+  <div class="container">
+    <%- include('./commone/head.ejs') %>
+    <div class="lv_main">
+    <%- include('./commone/menu.ejs') %>
+    <div class="body">
+        <div class="">
+            <button class="phone btn btn-primary">新增品牌</button>
+            <table class="table table-hover table-bordered table-striped">
+              <thead>
+                <tr id="tr">
+                  <th>序号</th>
+                  <th>品牌LOGO</th>
+                  <th>品牌名称</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="tr">
+                  <th scope="row">1</th>
+                  <td style="width: 150px">
+                    <img src="/images/huawei_logo.png" alt="">
+                  </td>
+                  <td class="brand">华为</td>
+                  <td style="width: 110px;">
+                    <a href="">修改</a>&ensp;&ensp;
+                    <a href="" style="color: rgb(107, 33, 33)">删除</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+    </div>
+    <%- include('./commone/foot') %>
+  </div>
+</body>
+
+</html>

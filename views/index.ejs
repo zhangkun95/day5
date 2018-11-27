@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xx后台管理系统</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/commone.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/indexjg.css">
+</head>
+
+<body>
+  <div class="container">
+    <%- include('./commone/head.ejs') %>
+    <div class="lv_main">
+    <%- include('./commone/menu.ejs') %>
+    <div class="body">
+      <div class="indexjg">
+        <h3>小猩猩</h3>
+        <div><img src="/images/jg.jpg" alt=""></div>
+      </div>
+    </div>
+    </div>
+    <%- include('./commone/foot') %>
+  </div>
+</body>
+
 </html>

@@ -1,0 +1,16 @@
+.table {
+  vertical-align: middle;
+  text-align: center;
+  width: 600px; }
+
+#tr {
+  height: 100px; }
+  #tr th {
+    vertical-align: middle;
+    text-align: center; }
+  #tr td {
+    vertical-align: middle;
+    text-align: center;
+    line-height: 100px; }
+
+/*# sourceMappingURL=brand.css.map */
