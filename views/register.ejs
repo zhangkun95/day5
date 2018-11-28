@@ -20,11 +20,11 @@
       <div class="lv_main">
         <%- include('./commone/menu.ejs') %>
           <div class="body registerb">
-            <form action="/logon.html" class="form">
+            <form action="/users/register" class="form" method="POST">
               <div>注册</div>
               <div>
                 <span>用户名:</span>
-                <input type="text" class="unane">
+                <input type="text" class="unane" name="name">
                 <p class="unane1">请输入一个6-20字符的用户名</p>
                 <p class="unane2">请输入6-20个字符</p>
                 <p class="unane3" style="color: rgb(25, 216, 66)">ok</p>
@@ -32,7 +32,7 @@
               </div>
               <div>
                 <span>密&emsp;码:</span>
-                <input type="password" value="" class="pwp">
+                <input type="password" value="" class="pwp" name="pwp">
                 <p class="pwp1">请输入一个6-20字符的密码</p>
                 <p class="pwp2" style="color: rgb(250, 7, 7)">密码不符合要求，请重新输入</p>
                 <p class="pwp3" style="color: rgb(25, 216, 66)">ok</p>
@@ -45,14 +45,14 @@
               </div>
               <div>
                 <span>昵称:</span>
-                <input type="text" value="" class="unanen">
+                <input type="text" value="" class="unanen" name="nickname">
                 <p class="unanen1" style="color: rgb(25, 216, 66)">OK</p>
                 <p class="unanen2" style="color: rgb(250, 7, 7)">NO</p>
                 <p class="unanen3">请输入一个昵称，不可超过10个字符</p>
               </div>
               <div>
                 <span>手机号码:</span>
-                <input type="text" value="" class="phone">
+                <input type="text" value="" class="phone" name="phone">
                 <p class="phone1" style="color: rgb(25, 216, 66)">OK</p>
                 <p class="phone2" style="color: rgb(250, 7, 7)">NO</p>
                 <p class="phone3">请输入正确的手机号码</p>
@@ -60,9 +60,9 @@
               <div>
                 <span>管理员:</span>
                 <label>
-                  <input type="radio" name="dx">yes</label>
+                  <input type="radio" name="isAdmin" value="yes">yes</label>
                 <label>
-                  <input type="radio" name="dx">no</label>
+                  <input type="radio" name="isAdmin" value="no">no</label>
               </div>
               <div>
                 <input type="submit" value="注册" class="button btn btn-primary">

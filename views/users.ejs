@@ -30,9 +30,10 @@
                                     <th>序号</th>
                                     <th>用户名</th>
                                     <th>昵称</th>
-                                    <th>年龄</th>
-                                    <th>性别</th>
+                                    <!-- <th>年龄</th>
+                                    <th>性别</th> -->
                                     <th>是否管理员</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,14 +48,18 @@
                                         <td>
                                             <%= list[i].nickname %>
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             <%= list[i].age %>
                                         </td>
                                         <td>
                                             <%= list[i].sex %>
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <%= list[i].isAdmin %>
+                                        </td>
+                                        <td><% if(!list[i].isAdmin) {%>
+                                            <a href="/users/delete?id=<%= list[i]._id %>">删除</a>
+                                        <%}%>
                                         </td>
                                     </tr>
                                     <% }%>
@@ -63,27 +68,16 @@
                         </table>
                         <ul class="pagination">
                             <li>
-                                <a href="#" aria-label="Previous">
+                                <a href="/users?page=<%= currentPage - 1 < 1 ? 1: currentPage - 1 %>&pageSize=<%= pageSize %>" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
-                            <li class="active">
-                                <a href="#">1</a>
-                            </li>
+                            <% for (var i = currentPage < 3 ?0:(currentPage-3); i < (currentPage>(currentPage+2)?totalPage:((currentPage+2)>totalPage?totalPage:(currentPage+2))); i++) {%>
+                                
+                                <li class="<%= currentPage === (i+1) ? 'active': '' %>"><a href="/users?page=<%= i+1 %>&pageSize=<%= pageSize %>"><%= i + 1%></a></li>
+                              <%}%>
                             <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">5</a>
-                            </li>
-                            <li>
-                                <a href="#" aria-label="Next">
+                                <a href="/users?page=<%= currentPage + 1 > totalPage ? totalPage: currentPage + 1 %>&pageSize=<%= pageSize %>" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>

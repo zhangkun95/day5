@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var ignoreRouter = require('./config/ignoreRouter')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -18,6 +18,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function(req,res,next){
+  if(ignoreRouter.indexOf(req.url) > -1){
+    next();
+    return;
+  }
+  var username = req.cookies.username;
+  if(username){
+    next();
+  }else{
+    res.redirect('/logon.html')
+  }
+})
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
