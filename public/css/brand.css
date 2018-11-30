@@ -11,6 +11,36 @@
   #tr td {
     vertical-align: middle;
     text-align: center;
-    line-height: 100px; }
+    height: 50px; }
+    #tr td img {
+      height: 50px; }
+
+.add, .modify {
+  width: 26%;
+  position: absolute;
+  top: 30%;
+  left: 37%;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500; }
+  .add h2, .modify h2 {
+    font-size: 30px;
+    line-height: 60px; }
+  .add div, .modify div {
+    margin: 20px 0; }
+    .add div span, .modify div span {
+      display: inline-block;
+      width: 25%;
+      text-align: right; }
+    .add div select, .modify div select {
+      width: 50%; }
+    .add div input, .modify div input {
+      width: 50%; }
+
+#file {
+  display: inline-block;
+  font-size: 12px; }
 
 /*# sourceMappingURL=brand.css.map */

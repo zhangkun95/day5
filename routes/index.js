@@ -10,11 +10,11 @@ router.get('/', function(req, res, next) {
 // })
 // 品牌管理
 router.get('/brand.html',function(req,res){
-  res.render('brand');
+  res.redirect('/users/brand');
 })
 // 手机管理
 router.get('/phone.html',function(req,res){
-  res.render('phone')
+  res.redirect('/users/phone')
 })
 // 登录管理
 router.get('/logon.html',function(req,res){

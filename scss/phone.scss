@@ -26,10 +26,16 @@ th{
     }
 }
 #tr{ 
-    td{line-height: 100px;
+    td{
+        // line-height: 100px;
         height: 100px;
         margin: 0;
         padding: 0;
+        line-height: 20px;
+        vertical-align: middle;
+        img{
+            height: 100%;
+        }
     }
     th{
         line-height: 100px;

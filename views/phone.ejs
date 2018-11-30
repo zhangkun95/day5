@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>xx后台管理系统</title>
+  <title>小猩猩后台管理系统</title>
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/commone.css">
@@ -34,83 +34,103 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr id="tr">
-                    <th scope="row">1</th>
-                    <td>
-                      <img src="/images/sj.jpg" alt="">
+                  <%  for(var i = 0 ; i< list.length;i++){ %>
+                    <tr id="tr">
+                      <th scope="row">
+                        <%= i+1 %>
+                      </th>
+                      <td><img src="/<%= list[i].img %>" alt=""></td>
+                      <td class="name"><%= list[i].name %></td>
+                      <td class="brand"><%= list[i].brand %></td>
+                      <td class="brandyj">￥<%= list[i].brandyj %></td>
+                      <td class="brandej">￥<%= list[i].brandej %></td>
+                      <td><% if(list[i].name) {%>
+                        <a href="/users/deletep?id=<%= list[i]._id %>">删除</a>
+                    <%}%>
                     </td>
-                    <td class="name">华为 HUAWEI Mate 20 </td>
-                    <td class="brand">华为</td>
-                    <td class="brandyj">￥8699</td>
-                    <td class="brandej">￥7699</td>
-                    <td>
-                      <a href="">修改</a>
-                      <a href="" style="color: rgb(107, 33, 33)">删除</a>
-                    </td>
-                  </tr>
-                  <tr id="tr">
-                    <th scope="row">1</th>
-                    <td>
-                      <img src="/images/sj.jpg" alt="">
-                    </td>
-                    <td class="name">华为 HUAWEI Mate 20 </td>
-                    <td class="brand">华为</td>
-                    <td class="brandyj">￥8699</td>
-                    <td class="brandej">￥7699</td>
-                    <td>
-                      <a href="">修改</a>
-                      <a href="" style="color: rgb(107, 33, 33)">删除</a>
-                    </td>
-                  </tr>
-                  <tr id="tr">
-                    <th scope="row">1</th>
-                    <td>
-                      <img src="/images/sj.jpg" alt="">
-                    </td>
-                    <td class="name">华为 HUAWEI Mate 20 </td>
-                    <td class="brand">华为</td>
-                    <td class="brandyj">￥8699</td>
-                    <td class="brandej">￥7699</td>
-                    <td>
-                      <a href="">修改</a>
-                      <a href="" style="color: rgb(107, 33, 33)">删除</a>
-                    </td>
-                  </tr>
+                    </tr>
+                    <% } %>
+                      <!-- <tr id="tr">
+                        <th scope="row">1</th>
+                        <td>
+                          <img src="/images/sj.jpg" alt="">
+                        </td>
+                        <td class="name">华为 HUAWEI Mate 20 </td>
+                        <td class="brand">华为</td>
+                        <td class="brandyj">￥8699</td>
+                        <td class="brandej">￥7699</td>
+                        <td>
+                          <a href="">修改</a>
+                          <a href="" style="color: rgb(107, 33, 33)">删除</a>
+                        </td>
+                      </tr>
+                      <tr id="tr">
+                        <th scope="row">1</th>
+                        <td>
+                          <img src="/images/sj.jpg" alt="">
+                        </td>
+                        <td class="name">华为 HUAWEI Mate 20 </td>
+                        <td class="brand">华为</td>
+                        <td class="brandyj">￥8699</td>
+                        <td class="brandej">￥7699</td>
+                        <td>
+                          <a href="">修改</a>
+                          <a href="" style="color: rgb(107, 33, 33)">删除</a>
+                        </td>
+                      </tr> -->
                 </tbody>
               </table>
+              <ul class="pagination">
+                  <li>
+                      <a href="/users/phone?page=<%= currentPage - 1 < 1 ? 1: currentPage - 1 %>&pageSize=<%= pageSize %>" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                  <% for (var i = currentPage < 3 ?0:(currentPage-3); i < (currentPage>(currentPage+2)?totalPage:((currentPage+2)>totalPage?totalPage:(currentPage+2))); i++) {%>
+                      
+                      <li class="<%= currentPage === (i+1) ? 'active': '' %>"><a href="/users/phone?page=<%= i+1 %>&pageSize=<%= pageSize %>"><%= i + 1%></a></li>
+                    <%}%>
+                  <li>
+                      <a href="/users/phone?page=<%= currentPage + 1 > totalPage ? totalPage: currentPage + 1 %>&pageSize=<%= pageSize %>" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+              </ul>
             </div>
             <div class="add" style="display: none">
               <h2>新增手机</h2>
-              <form action="">
+              <form action="/users/xphone" method="POST" enctype="multipart/form-data">
                 <div>
-                  <span>名称:</span>
-                  <input type="text">
+                  <span>手机名称:</span>
+                  <input type="text" name="name">
                 </div>
                 <div>
-                  <span>品牌:</span>
-                  <select name="">
-                    <option value="0">请选择</option>
-                    <option value="1">华为</option>
+                  <span>所属品牌:</span>
+                  <select name="brand">
+                    <option value="请选择">请选择</option>
+                    <option value="华为">华为</option>
                   </select>
                 </div>
                 <div>
                   <span>官方指导价:</span>
-                  <input type="text">
+                  <input type="text" name="brandyj">
                 </div>
                 <div>
                   <span>二手回收价:</span>
-                  <input type="text">
+                  <input type="text" name="brandej">
                 </div>
                 <div>
-                  <span>图片:</span>
-                  <input id="file" type="file">
+                  <span>实物图片:</span>
+                  <input id="file" type="file" name="img">
                 </div>
                 <div>
-                  <input style="width: 25%;margin-right: 50px;background: rgb(21, 191, 221);color: #ffffff;padding: 10px 0;border-radius: 10px;outline: transparent;" type="submit" value="确认">
+                  <input style="width: 25%;margin-right: 50px;background: rgb(21, 191, 221);color: #ffffff;padding: 10px 0;border-radius: 10px;outline: transparent;"
+                    type="submit" value="确认">
                   <input class="cancel" style="width: 25%;padding: 10px 0;border-radius: 10px;outline: transparent;" type="button" value="取消">
                 </div>
               </form>
             </div>
+            
           </div>
       </div>
       <%- include('./commone/foot') %>
@@ -120,10 +140,10 @@
 </html>
 <script src="/js/jquery.min.js"></script>
 <script>
-  $(".phone").click(function(){
+  $(".phone").click(function () {
     $(".add").show();
   })
-  $(".cancel").click(function(){
+  $(".cancel").click(function () {
     $(".add").hide();
   })
 

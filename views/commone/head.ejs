@@ -1,9 +1,24 @@
 <div class="lv_head">
     <div class="left">
-        <a href="/" class="logo">小猩猩后台管理系统</a>
+        <a href="/users/index" class="logo">小猩猩后台管理系统</a>
     </div>
     <div class="right">
-        <p>欢迎你-小猩猩（管理员）</p>
-        <button class="button btn-primary btn-lg">退出</button>
+            <p>
+                <% if(isAdmin == "true")  {%>
+                欢迎你-小猩猩（管理员）<%= username %>
+            <%  } else {%>
+                欢迎你-小猩猩<%=username %>
+                <%}%>
+            </p>
+        <a class="button btn-primary btn-lg" id="Logout" href="/users/cookie">退出</a>
     </div>
 </div>
+<!-- <script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script>
+    $("#Logout").click(function(){
+        $.cookie("isAdmin", "", {expires: -1});
+        $.cookie("username", "", {expires: -1});
+        location.reload();
+    })
+</script> -->

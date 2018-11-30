@@ -20,10 +20,13 @@ th {
       vertical-align: top; }
 
 #tr td {
-  line-height: 100px;
   height: 100px;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  line-height: 20px;
+  vertical-align: middle; }
+  #tr td img {
+    height: 100%; }
 #tr th {
   line-height: 100px;
   padding: 0; }
